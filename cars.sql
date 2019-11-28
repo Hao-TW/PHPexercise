@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2019 年 11 月 28 日 13:10
+-- 產生時間： 2019 年 11 月 28 日 13:32
 -- 伺服器版本： 8.0.17
 -- PHP 版本： 7.2.11
 
@@ -40,64 +40,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `ownerid`, `carno`, `typeid`) VALUES
-(1, 2, 'UNI-9487', 1);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `cartype`
---
-
-CREATE TABLE `cartype` (
-  `id` int(11) NOT NULL,
-  `typename` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `faid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 傾印資料表的資料 `cartype`
---
-
-INSERT INTO `cartype` (`id`, `typename`, `faid`) VALUES
-(1, 'M6', 1);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `customers`
---
-
-CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
-  `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Phone` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 傾印資料表的資料 `customers`
---
-
-INSERT INTO `customers` (`id`, `Name`, `Address`, `Phone`) VALUES
-(2, 'Peter', 'No. 10, test load', '0912345678');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `factory`
---
-
-CREATE TABLE `factory` (
-  `id` int(11) NOT NULL,
-  `faname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 傾印資料表的資料 `factory`
---
-
-INSERT INTO `factory` (`id`, `faname`) VALUES
-(1, 'BMW');
+(1, 2, 'IRH-6666', 1);
 
 --
 -- 已傾印資料表的索引
@@ -108,30 +51,9 @@ INSERT INTO `factory` (`id`, `faname`) VALUES
 --
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `ownerid` (`ownerid`),
   ADD UNIQUE KEY `carno` (`carno`),
-  ADD KEY `typeid` (`typeid`);
-
---
--- 資料表索引 `cartype`
---
-ALTER TABLE `cartype`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `typename` (`typename`),
-  ADD KEY `faid` (`faid`);
-
---
--- 資料表索引 `customers`
---
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `factory`
---
-ALTER TABLE `factory`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `faname` (`faname`);
+  ADD KEY `typeid` (`typeid`),
+  ADD KEY `ownerid` (`ownerid`) USING BTREE;
 
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
@@ -144,24 +66,6 @@ ALTER TABLE `cars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `cartype`
---
-ALTER TABLE `cartype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `customers`
---
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `factory`
---
-ALTER TABLE `factory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- 已傾印資料表的限制式
 --
 
@@ -171,12 +75,6 @@ ALTER TABLE `factory`
 ALTER TABLE `cars`
   ADD CONSTRAINT `cars_ibfk_1` FOREIGN KEY (`ownerid`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `cars_ibfk_2` FOREIGN KEY (`typeid`) REFERENCES `cartype` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- 資料表的限制式 `cartype`
---
-ALTER TABLE `cartype`
-  ADD CONSTRAINT `cartype_ibfk_1` FOREIGN KEY (`faid`) REFERENCES `factory` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
