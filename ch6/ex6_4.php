@@ -3,6 +3,7 @@
       function hello($x){
         $sum = $x * 2;
         echo "函數執行結束 <br />";
+        return $sam;
       }
 ?>
     <p> -------我是分隔線------</p>
