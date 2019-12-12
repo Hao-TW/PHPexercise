@@ -10,5 +10,5 @@
 <?php
       hello($x);
       echo "x=$x<br />";
-      echo "sum=$sum<br />";
+      echo "sum=2<br />";
 ?>
