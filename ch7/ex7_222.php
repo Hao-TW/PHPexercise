@@ -6,8 +6,7 @@ function sum(...$n){
     }
     return $total;
 }
-
-
+print"TOTAL: ".sum(1,3,7,11,9);
 ?>
 <?php
   // 從 1 加到 50 的整數和
@@ -18,4 +17,3 @@ function sum(...$n){
   }  
   echo "總合是: $sum";
 ?>
-
