@@ -1,5 +1,5 @@
 <?php
-include "dog2.php";
+include "dog.php";
 
 class Poodle extends dog{
   protected $size;
@@ -8,10 +8,11 @@ class Poodle extends dog{
     parent::__construct($name,$color,$style);
     $this->size = $size;
   }
-  public function Size(){
-      return $this->size;
+  // 實作父類別的狗叫 function
+  public function Bark(){
+    echo "狗叫...但小聲....";
+    //呼叫父類別的 dogBark()
   }
-  // 覆寫狗叫的 function
   public function dogBark(){
     echo "狗叫...但小聲....";
     //呼叫父類別的 dogBark()
