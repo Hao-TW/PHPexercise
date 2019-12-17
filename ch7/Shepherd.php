@@ -15,7 +15,7 @@
        $this->age = $age;
       }
       public function Age(){
-          echo  $this->Age;
+          echo  $this->Age = $age;
       }
      // 定義子類別的方法 
      public function doWork(){
