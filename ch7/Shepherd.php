@@ -17,6 +17,7 @@
      // 定義子類別的方法 
      public function doWork(){
        echo "趕羊..."."<br />";
+     
      }
      // 覆寫(override)解構子
      public function __destruct(){
