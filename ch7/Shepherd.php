@@ -14,8 +14,8 @@
        $this->style = $style;
        $this->age = $age;
       }
-      public function Age(){
-          echo  $this->Age = $age;
+     public function Age(){
+       echo $this->Age = $age;
       }
      // 定義子類別的方法 
      public function doWork(){
