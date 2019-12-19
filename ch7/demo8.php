@@ -27,12 +27,14 @@ class Action{
         $obb->sleep();
     }
   }
-$sleep = new Animal();
+
 $dog = new Dog();
 $bird = new Bird();
 $action = new Action();
 $action->actionMove($dog);
 $action->actionMove($bird);
+$sleep = new Animal();
 $action->actionsleep($sleep);
+
 ?>
 
