@@ -21,11 +21,12 @@ class Action{
       $obj->move();
   }
 }
-
+$sleep = new Animal();
 $dog = new Dog();
 $bird = new Bird();
 $action = new Action();
 $action->actionMove($dog);
 $action->actionMove($bird);
+$action->actionMove($sleep);
 ?>
 
