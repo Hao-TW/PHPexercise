@@ -21,20 +21,14 @@ class Action{
       $obj->move();
   }
 }
-class Action{
-    public function actionsleep(Animal $obb)
-    {
-        $obb->sleep();
-    }
-  }
+
 
 $dog = new Dog();
 $bird = new Bird();
 $action = new Action();
 $action->actionMove($dog);
 $action->actionMove($bird);
-$sleep = new Animal();
-$action->actionsleep($sleep);
+
 
 ?>
 
