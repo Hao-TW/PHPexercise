@@ -22,7 +22,7 @@ class Action{
   }
 }
 class Action{
-    public function actionMove(Animal $obb)
+    public function actionsleep(Animal $obb)
     {
         $obb->sleep();
     }
@@ -33,6 +33,6 @@ $bird = new Bird();
 $action = new Action();
 $action->actionMove($dog);
 $action->actionMove($bird);
-$action->actionMove($sleep);
+$action->actionsleep($sleep);
 ?>
 
