@@ -16,8 +16,8 @@ class Shape {
   }
 }
 $circle = new Shape();
-echo $circle->area(3);
+echo $circle->area(3).PHP_EOL;
 $rect = new Shape();
-echo $rect->area(8,6);
-echo Shape::hello()[1];
+echo $rect->area(8,6).PHP_EOL;
+echo Shape::hello()[1].PHP_EOL;
 ?>
