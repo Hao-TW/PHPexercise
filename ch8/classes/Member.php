@@ -5,4 +5,5 @@ class Member{
     echo "print member list...<br>";
   }
 }
+
 ?>
