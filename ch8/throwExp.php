@@ -9,7 +9,8 @@ function check($num){
 }
 try{
     echo check(0);
-} catch (Exception $e){
+} 
+catch (Exception $e){
   echo "Error Message: ".$e->getMessage()."<br />";
   echo "Error Code: ".$e->getCode()."<br />";
 }
