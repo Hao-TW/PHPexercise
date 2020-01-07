@@ -19,6 +19,4 @@ $player = new Player();
 $player->play();
 $player->gamePlay();
 
-
-
 ?>
