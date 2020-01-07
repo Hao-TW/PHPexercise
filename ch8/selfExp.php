@@ -7,7 +7,7 @@ class EmailFormatExection extends Exection{
 }
 function check($email){
     if(!strpos($email,@))
-    throw new EmailFormatExection("E-mail need inclued'@'");
+        throw new EmailFormatExection("E-mail need inclued'@'");
 
 }
 try {
