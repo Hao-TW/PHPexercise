@@ -1,5 +1,5 @@
 <?php
-class EmailFormatException extends Exection{
+class EmailFormatException extends Excption{
     function printMessage(){
         echo "例外訊息".$this->getMessage()."<br />";
 
