@@ -7,7 +7,7 @@ trait Hello{
 }
 trait World{
     public function sayWorld(){
-        echo 'World';
+        echo 'world';
     }
 }
 trait HelloWorld{
