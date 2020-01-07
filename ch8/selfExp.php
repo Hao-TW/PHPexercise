@@ -1,5 +1,5 @@
 <?php
-class EmailFormatExection extends Exection{
+class EmailFormatException extends Exection{
     function printMessage(){
         echo "例外訊息".$this->getMessage()."<br />";
 
@@ -7,7 +7,7 @@ class EmailFormatExection extends Exection{
 }
 function check($email){
     if(!strpos($email,@))
-        throw new EmailFormatExection("E-mail need inclued'@'");
+        throw new EmailFormatException("E-mail need inclued'@'");
 
 }
 try {
